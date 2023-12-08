@@ -1,0 +1,22 @@
+project/project
+project/target
+project/.bloop
+project/metals.sbt
+target
+metals.sbt
+
+# auto-generated files.
+/.classpath
+/.project
+/.settings/
+/.bloop/
+/.metals/
+
+.bloop/
+.bsp/
+.metals/
+.vim/
+project/.bloop
+project/metals.sbt
+src/main/scala/.metals
+src/test/.bsp
