@@ -11,6 +11,8 @@ metals.sbt
 /.settings/
 /.bloop/
 /.metals/
+/.vscode/
+.scala-build/
 
 .bloop/
 .bsp/
@@ -20,3 +22,10 @@ project/.bloop
 project/metals.sbt
 src/main/scala/.metals
 src/test/.bsp
+
+
+/project/
+.scalafix.conf
+.scalafmt.conf
+*.class
+*.tasty

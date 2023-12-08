@@ -140,7 +140,7 @@ object AbaloneEngine {
       val orig1D = flattenCoordinates2D(orig, situationBefore.board.width)
       val dest1D = flattenCoordinates2D(dest, situationBefore.board.width)
 
-      // we only check moves of 1 marbles to an empty square (anywhere) for now
+      // we only check moves of 1 marble to an empty square (anywhere) for now
       if (
         situationBefore.board.pieces.contains(Pos(orig1D))
         && !situationBefore.board.pieces.contains(Pos(dest1D))
@@ -172,14 +172,14 @@ object AbaloneEngine {
       def triangularSum(height: Int) = {
         (height * (height + 1)) / 2
       }
-      val losange                    = (2 * width - 1) * (2 * width)
+      val losange                    = (2 * width - 1) * (2 * width) - (2 * width - 1)
 
       if (coordinates._1 < width) {
         triangularSum(width + coordinates._1) - triangularSum(width) - coordinates._1 + coordinates._2
       } else {
         losange - triangularSum(width - 1) - triangularSum(
           (width + (2 * width - 2 - coordinates._1))
-        ) - (2 * width - 1) + coordinates._2
+        ) + coordinates._2
       }
     }
 
@@ -246,7 +246,7 @@ object Abalone extends App {
   // println(board(AbaloneEngine.Pos(1))) // it does apply
   val board7           =
     AbaloneEngine.Board.fromFEN("0 0 bbbbbbb/bbbbbbbb/3bbb3/10/11/12/5w1b5/12/11/10/3www3/wwwwwwww/wwwwwww b")
-  println("0 0 bbbbbbb/bbbbbbbb/3bbb3/10/11/12/13/12/11/10/3www3/wwwwwwww/wwwwwww b")
+  println("0 0 bbbbbbb/bbbbbbbb/3bbb3/10/11/12/5w1b5/12/11/10/3www3/wwwwwwww/wwwwwww b")
   println(board7)
   val situationBefore7 = new AbaloneEngine.Situation(board7, AbaloneEngine.W)
   val possibleMove7    = AbaloneEngine.Board.checkMove((12, 0), (6, 5), situationBefore7)
